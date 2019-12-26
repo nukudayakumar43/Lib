@@ -1,0 +1,14 @@
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\LibManagementRepository.deps.json
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\LibManagementRepository.dll
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.csprojAssemblyReference.cache
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.csproj.CoreCompileInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.AssemblyInfoInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.AssemblyInfo.cs
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.csproj.CopyComplete
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\LibManagementRepository.pdb
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.dll
+C:\Udayakumar\Study\Lib\LibManagementRepository\obj\Debug\netcoreapp2.1\LibManagementRepository.pdb
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\LibManagementContext.dll
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\LibManagementContext.pdb
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Udayakumar\Study\Lib\LibManagementRepository\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml

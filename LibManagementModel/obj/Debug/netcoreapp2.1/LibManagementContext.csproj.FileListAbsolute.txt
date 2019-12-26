@@ -1,0 +1,11 @@
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementContext.deps.json
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementContext.dll
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.csproj.CoreCompileInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.AssemblyInfoInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.AssemblyInfo.cs
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementContext.pdb
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.dll
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.pdb
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementContext.csprojAssemblyReference.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementContext.runtimeconfig.json
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementContext.runtimeconfig.dev.json

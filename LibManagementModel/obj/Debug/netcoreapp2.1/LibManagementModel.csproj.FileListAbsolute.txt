@@ -1,0 +1,12 @@
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementModel.deps.json
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementModel.dll
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\LibManagementModel.pdb
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.csproj.CoreCompileInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.AssemblyInfoInputs.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.AssemblyInfo.cs
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.dll
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.pdb
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.csprojAssemblyReference.cache
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Udayakumar\Study\Lib\LibManagementModel\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Udayakumar\Study\Lib\LibManagementModel\obj\Debug\netcoreapp2.1\LibManagementModel.csproj.CopyComplete
