@@ -8,6 +8,8 @@ using LibManagementModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using X.PagedList;
+using X.PagedList.Mvc;
 
 namespace LibManagement.Controllers
 {
@@ -22,9 +24,13 @@ namespace LibManagement.Controllers
 
         [HttpGet]
         [Authorize]
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             List<BookDetail> list = new List<BookDetail>();
+
+            var pageIndex = (page ?? 1); //MembershipProvider expects a 0 for the first page
+            var pageSize = 10;
+
             using (HttpClient httpClient = new HttpClient())
             {
 
@@ -36,9 +42,8 @@ namespace LibManagement.Controllers
             }
 
 
-            return View(list);
-        }
-
+            return View(list.ToPagedList(pageIndex, pageSize));
+        }        
 
         [Authorize]
         [ActionName("BookFilter")]

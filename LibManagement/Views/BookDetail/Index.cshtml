@@ -1,5 +1,11 @@
-﻿@using PagedList.Mvc;
-@model IEnumerable<LibManagementModel.BookDetail>
+﻿@model X.PagedList.IPagedList<LibManagementModel.BookDetail>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,60 +17,58 @@
         @Html.ActionLink("Create New", "Create")
     }
 </p>
-<form asp-controller="BookDetail" asp-action="BookFilter">
+<form asp-controller="BookDetail" asp-action="Index">
     <p>
-        Title: <input type="text" name="id">
+        Title: <input type="text" name="searchString">
         <input type="submit" value="Search" />
     </p>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("AuthorName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("BookName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("CreatedDate", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.BookDetailId }) | @Html.ActionLink("Details", "Details", new { id = item.BookDetailId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.BookDetailId })*@
+
+                        @*<a asp-controller="BookDetail" asp-action="Index" asp-route-id="@item.BookDetailId">Edit</a>
+                            <label>|</label>
+                            <a asp-controller="BookDetail" asp-action="Details" asp-route-id="@item.BookDetailId">Details</a>
+                            <label>|</label>*@
+                        <a asp-controller="BookDetail" asp-action="Delete" asp-route-id="@item.BookDetailId">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page,sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }))
 </form>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("AuthorName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            @Html.ActionLink("BookName", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            @Html.ActionLink("CreatedDate", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AuthorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedDate)
-            </td>
-
-            <td>
-                @if (User.IsInRole("Admin"))
-                {
-                    @*@Html.ActionLink("Edit", "Edit", new { id = item.BookDetailId }) | @Html.ActionLink("Details", "Details", new { id = item.BookDetailId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.BookDetailId })*@
-
-                    @*<a asp-controller="BookDetail" asp-action="Index" asp-route-id="@item.BookDetailId">Edit</a>
-                    <label>|</label>
-                    <a asp-controller="BookDetail" asp-action="Details" asp-route-id="@item.BookDetailId">Details</a>
-                    <label>|</label>*@
-                    <a asp-controller="BookDetail" asp-action="Delete" asp-route-id="@item.BookDetailId">Delete</a>
-                }
-            </td>
-        </tr>
-    }
-</table>
-
-@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
-
-@*@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
 
 
-@*<pager class="pager-container" list="@Model" asp-action="Index" asp-controller="Search" asp-route-query="@ViewBag.CurrentFilter" />*@
+<pager class="pager-container" list="@Model" asp-action="Index" asp-controller="BookDetail" asp-route-query="@ViewBag.CurrentFilter" />
