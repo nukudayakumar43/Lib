@@ -8,7 +8,8 @@ namespace LibManagementRepository
     public interface IRepositoryWrapper
     {
         IBookDetailRepository BookDetailRepository { get; }
-        
+
+        IUserDetailRepository  UserDetailRepository { get; }
         void Save();
     }
 
@@ -16,20 +17,37 @@ namespace LibManagementRepository
     {
         private LibManagementContext _repoContext;
         
-        private IBookDetailRepository _account;
+        private IBookDetailRepository _book;
+
+        private IUserDetailRepository _userDetail;
+        
 
         public IBookDetailRepository BookDetailRepository
         {
             get
             {
-                if (_account == null)
+                if (_book == null)
                 {
-                    _account = new BookDetailRepository(_repoContext);
+                    _book = new BookDetailRepository(_repoContext);
                 }
 
-                return _account;
+                return _book;
             }
         }
+
+        public IUserDetailRepository UserDetailRepository
+        {
+            get
+            {
+                if (_userDetail == null)
+                {
+                    _userDetail = new UserDetailRepository(_repoContext);
+                }
+
+                return _userDetail;
+            }
+        }
+        
 
         public RepositoryWrapper(LibManagementContext repositoryContext)
         {

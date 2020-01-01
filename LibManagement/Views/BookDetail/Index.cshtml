@@ -18,6 +18,7 @@
     }
 </p>
 <form asp-controller="BookDetail" asp-action="Index">
+    @Html.AntiForgeryToken()
     <p>
         Title: <input type="text" name="searchString">
         <input type="submit" value="Search" />
@@ -66,7 +67,7 @@
             </tr>
         }
     </table>
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page=page,sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }))
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page, sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }))
 </form>
 
 

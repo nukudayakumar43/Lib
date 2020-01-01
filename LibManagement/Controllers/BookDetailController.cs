@@ -13,6 +13,7 @@ using X.PagedList.Mvc;
 
 namespace LibManagement.Controllers
 {
+    
     public class BookDetailController : Controller
     {
         private readonly AppSettings _appSettings;
@@ -28,7 +29,7 @@ namespace LibManagement.Controllers
         {
             List<BookDetail> list = new List<BookDetail>();
 
-            var pageIndex = (page ?? 1); //MembershipProvider expects a 0 for the first page
+            var pageIndex = (page ?? 1);
             var pageSize = 10;
 
             using (HttpClient httpClient = new HttpClient())
@@ -43,7 +44,7 @@ namespace LibManagement.Controllers
 
 
             return View(list.ToPagedList(pageIndex, pageSize));
-        }        
+        }
 
         [Authorize]
         [ActionName("BookFilter")]
@@ -91,7 +92,7 @@ namespace LibManagement.Controllers
             return View();
         }
 
-        //[HttpDelete("{id}")]
+        [Authorize]
         public IActionResult Delete(int id)
         {
             using (HttpClient httpClient = new HttpClient())

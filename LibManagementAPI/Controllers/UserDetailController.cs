@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibManagementRepository;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,11 +12,21 @@ namespace LibManagementAPI.Controllers
     [Route("api/[controller]")]
     public class UserDetailController : Controller
     {
+        private readonly IRepositoryWrapper _repositoryWrapper;
+        public UserDetailController(IRepositoryWrapper repoWrapper)
+        {
+            _repositoryWrapper = repoWrapper;
+
+        }
+
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public bool Get(string userName, string password)
         {
-            return new string[] { "value1", "value2" };
+            bool isExist = _repositoryWrapper.UserDetailRepository.GetFirst(p => p.UserName.Equals(userName, StringComparison.InvariantCultureIgnoreCase)
+                        && p.Password.Equals(password, StringComparison.InvariantCultureIgnoreCase)) != null;
+
+            return isExist;
         }
 
         // GET api/<controller>/5

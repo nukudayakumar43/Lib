@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using LibManagement.Models;
 using LibManagementModel;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using LibManagement.Migrations;
 
 namespace LibManagement
 {
@@ -37,7 +38,12 @@ namespace LibManagement
             });
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.AddMvc();
+            services.AddTransient<LibInitializer>();
 
             var appSettings = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettings);
@@ -49,7 +55,7 @@ namespace LibManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, LibInitializer libInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -65,6 +71,7 @@ namespace LibManagement
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+            
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapRazorPages();
@@ -75,6 +82,8 @@ namespace LibManagement
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            libInitializer.Seed().Wait();
         }
     }
 }

@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "LibManagement/1.0.0": {
         "dependencies": {
+          "EntityFramework": "6.4.0",
           "LibManagementContext": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.1.1",
@@ -39,6 +40,7 @@
           "LibManagement.dll": {}
         }
       },
+      "EntityFramework/6.4.0": {},
       "Microsoft.AspNetCore.Mvc.Abstractions/2.1.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Routing.Abstractions": "2.1.1",
@@ -3547,6 +3549,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFramework/6.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7jDmcQ3jaN5G7ZJC7Ecq161zQBs/5LqRzBdZ/I4XfmSvOwteGgNjOi30kthFador4Qjo3qUU6iOB1H04GIXrpg==",
+      "path": "entityframework/6.4.0",
+      "hashPath": "entityframework.6.4.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.1.2": {
       "type": "package",

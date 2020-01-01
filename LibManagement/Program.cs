@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LibManagementModel;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -35,6 +36,9 @@ namespace LibManagement
                 {
                     var context = services.GetRequiredService<LibManagementModel.LibManagementContext>();
                     context.Database.EnsureCreated();
+                    //DbContext dbContext = new DbContext()
+
+                    
                     Intialize(context);
 
                 }
